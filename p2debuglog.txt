@@ -1,5 +1,5 @@
 clang version 7.0.0-3~ubuntu0.18.04.1 (tags/RELEASE_700/final)
-gcc -g p2original.c
+ gcc -g p2original.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -16,20 +16,27 @@ Find the GDB manual and other documentation resources online at:
 For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x722: file p2original.c, line 2.
 (gdb) r
 Starting program: /home/runner/pps-test1-Davisjacob9/a.out 
 warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2original.c:2
+2   int main() {    
+(gdb) n
+6       printf("Enter two integers: ");
+(gdb) n
+7       scanf("%d %d", &number1, &number2);
+(gdb) n
 Enter two integers: 2
 2
-2 + 2 = 4[Inferior 1 (process 111) exited normally]
+10      sum = number1 + number2;      
+(gdb) n
+12      printf("%d + %d = %d", number1, number2, sum);
+(gdb) n
+13      return 0;
+(gdb) c
+Continuing.
+2 + 2 = 4[Inferior 1 (process 91) exited normally]
 (gdb) 
-
-
-
-
-
-
-
-
-
-
