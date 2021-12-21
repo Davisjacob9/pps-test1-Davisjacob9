@@ -1,8 +1,10 @@
-int main(void){ 
-   int n=50; 
- 
-   addTo(&n, 30);   //The value of n itself is changed by the function. 
- 
-   printf("sum = %d",n);  
-   return 0; 
-} 
+#include<stdio.h>
+int main()
+{
+  int a,b;
+  printf("enter the a,b values");
+  scanf("%d%d",&a,&b);
+  printf("the sum of two numbers = %d",a+b);
+  return 0;
+  
+  }
